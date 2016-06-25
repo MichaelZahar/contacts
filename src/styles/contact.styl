@@ -1,0 +1,74 @@
+.city
+  text-align: center
+
+  .current-weather
+    h1
+      margin: 0.5em 0 0.25em 0
+      font-size: 4.8em
+
+    h2
+      position: relative
+      left: 15px
+      font-size: 9.2em
+
+    p
+      font-size: 2.4em
+      margin: 0.5em 0
+
+  .day-forecast
+    list-style: none
+    margin-top: 30px
+
+    li
+      display: inline-block
+      width: 100px
+      margin: 10px 25px
+
+      font-size: 1.6em
+
+      .weather-data
+        position: relative
+        left: -6px
+
+      img
+        vertical-align: middle
+
+  .back
+    margin: 20px 0
+
+    font-size: 2.4em
+
+    a
+      color: #3ea8ea
+      text-decoration: none
+
+@media screen and (max-width: 470px)
+  .city
+    .day-forecast
+      li
+        display: block
+        margin: 10px auto
+
+@media screen and (max-width: 568px) and (orientation: landscape)
+  .city
+    position: relative
+
+    .current-weather
+      float: left
+      width: 290px
+
+    .day-forecast
+      position: relative
+      top: 15px
+      text-align: left
+      margin-left: 310px
+
+      li
+        display: block
+        margin: 15px 0
+        text-align: center
+
+    .back
+      margin: 0 0 0 20px
+      text-align: left
+

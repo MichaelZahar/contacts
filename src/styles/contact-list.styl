@@ -1,0 +1,207 @@
+.contacts-container
+  overflow: auto
+
+  h1
+    font-size: 3em
+    margin: 0.8em 0 0.3em 0
+    text-indent: 10px
+
+.contacts-list
+  margin-right: 35em
+
+  .add,
+  .edit
+    appearance: none
+    outline: none
+    display: block
+    border-radius: 3px
+
+    background: none
+    border: solid 1px #2582d2
+    color: #2582d2
+    font-size: 1.6em
+    padding: 5px 10px
+    text-decoration: none
+    text-transform: uppercase
+
+  .add
+    display: none
+    float: right
+    margin-right: 10px
+    color: #090
+    border-color: #090
+
+  .edit
+    float: left
+    margin-left: 10px
+
+  .field
+    margin-right: 2em
+    display: inline-block
+
+    &:last-child
+      margin-right: 0
+
+    &.name
+      width: 10em
+      overflow: hidden
+      text-overflow: ellipsis
+
+    &.birthdate
+      width: 5em
+
+    &.cellphone
+      width: 8em
+
+    &.address
+      min-width: (25 / 1.8)em
+      overflow: hidden
+      text-overflow: ellipsis
+
+  .header
+    font-size: 1.8em
+    color: #999
+    border-bottom: solid 1px #ccc
+    padding: 1em 0
+
+    li
+      display: inline-block
+      margin-right: 2em
+
+      &:first-child
+        padding-left: 20px
+
+      &:last-child
+        margin-right: 0
+
+  .contact-item
+    overflow: hidden
+    position: relative
+    white-space: nowrap
+    font-size: 1.8em
+    border-bottom: solid 1px #ccc
+    padding: 0.8em 20px 0.8em 20px
+
+    &:nth-child(odd)
+      background-color: #efefef
+
+    &:last-child
+      border: none
+
+    .row
+      position: relative
+      left: 0
+      transition: left 0.3s
+
+    .field
+      white-space: nowrap
+
+      .title
+        display: none
+
+    .delete
+      display: block
+      position: absolute
+      left: -3.5em
+      top: 0
+      height: 100%
+      width: 3.5em
+      font-size: 1.2em
+      line-height: 2.2em
+      color: #fff
+      background-color: #e00
+      text-decoration: none
+      text-align: center
+      transition: left 0.3s
+
+  .contacts-empty-list
+    margin: 2em 0
+    font-size: 2em
+    text-align: left
+    text-indent: 20px
+    color: #999
+
+.contacts-container
+  &.visible
+    .contacts-list
+      .add
+        display: none
+
+  &.editable
+    .contacts-list
+      .edit
+        background-color: #2582d2
+        color: #fff
+
+      .contact-item
+        .row
+          left: 3.5em
+
+        .delete
+          left: 0
+
+
+@media screen and (max-width: 1200px)
+  .list-container
+    font-size: 0.75em
+
+@media screen and (max-width: 1000px)
+  .header
+    display: none
+
+  .contacts-list
+
+    .contact-item
+      &:nth-child(n)
+        background-color: #fff
+
+      .field
+        display: block
+        width: auto !important
+
+        margin: 0.3em 0
+
+        &.empty
+          display: none
+
+        .title
+          display: inline-block
+          width: 4em
+          margin-right: .5em
+          text-align: right
+          color: #999
+
+          &:after
+            content: ':'
+
+@media screen and (max-height: 415px) and (max-width: 670px) and (orientation: landscape)
+  .contacts-container
+    .contacts-list
+      margin-right: 30em
+
+    .contacts-add
+      width: 27em
+
+@media screen and (max-width: 660px)
+  .contacts-container
+    position: relative
+    width: 100%
+    max-width: 500px
+    min-width: 320px
+    margin: 0 auto
+
+    .contacts-list
+      margin-right: 0
+
+      h1
+        text-indent: 0
+        text-align: center
+
+        margin: 0.5em 3.5em 0.5em 3.5em
+
+    .add
+      display: inline-block
+
+  .contacts-list
+    .contacts-empty-list
+      text-align: center
