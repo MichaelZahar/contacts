@@ -47,7 +47,18 @@ export const monthNames = (() => {
   const locale = navigator.language;
   const now = new Date();
 
-  return [...Array(12).keys()].map(month =>
-    new Date(now.getFullYear(), month, 1).toLocaleString(locale, { month: 'long' })
-  );
+  return [...Array(12).keys()].map((month, index) => {
+    let result = new Date(now.getFullYear(), month, 1).toLocaleString(locale, { month: 'long' });
+
+    // на ios safari не умеет options (второй параметр) в методе toLocaleString
+    if (result.match(/\d+/)) {
+      try {
+        result = result.match(/\d+\s(\w+)\s/)[1];
+      } catch (err) {
+        result = index + 1;
+      }
+    }
+
+    return result;
+  });
 })();
